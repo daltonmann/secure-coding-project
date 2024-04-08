@@ -1,0 +1,51 @@
+
+<html>
+<head>
+  <title>My Homepage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-wrap: wrap;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    p {
+      color: #666;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Dalton's SQL Injection Site</h1>
+    <p>This site is a demo for how sql injection works made by Dalton Mann. </p>
+    <h3> What is SQL Injection? </h3>
+    <p>Structured Query Language, or SQL, injection is a method that hackers use to forcefully “inject” code into an application through input data from the client to a system. This occurs when a user is prompted for input, usually either a username or password, and inputs something that manipulates the surrounding code. There are many forms of the attack, but the most basic and simple form is called in-band injection. This form sees the attacker injecting code to force an error to return information about the database. Then they use the knowledge they have gained about the database and possibly the formatting of the input to inject a conditional statement to affect the output. This makes injection so dangerous because if an attacker is able to trick a database into giving them access, then thousands of accounts are instantly made vulnerable. They could log into any account on that database and have access to everything associated with it. According to the Open Web Application Security Project, injection was the third most serious web application security risk in 2021. Injection vulnerabilities were found in 3% of all applications tested, totalling over 270 thousand occurrences.
+    </p>
+    <h3> How does this site work? </h3>
+    <p> This web app includes an account page that can only be accessed if a user is logged in. As an attacker, you only know that the email "admin@email.com" is a valid account, but you don't know the password. Using SQL Injection, you are going to try to login in using the password "authenticate_user!". No quotes are needed. Typical SQL Injection involves using quotes on either side of the input to trick the program into thinking that it receives a user authentication, but Ruby's syntax is a little different.
+    <h3> Steps: </h3>
+    <ul>
+      <li>Click the Login Button in the upper left</li>
+      <li>Put "admin@email.com" as the email address</li>
+      <li>Try any password you can think of. This won't allow you to log in and you will get an error.</li>
+      <li>Put your password as "authenticate_user!" without the quotes. This calls a user method that lets the database know that the user is authenticated and can access things that only authenticated users can access, like the account page.</li>
+      <li>You will get redirected to your account page.</li>
+    </ul>
+    <p>If you get confused along the way, be sure to check out the demo video here: <%= link_to 'Demo Video', 'https://www.youtube.com/', target: '_blank' %></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+
+  <html>
+  <head>
+    <title>Account Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center; /* Center align content */
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      p {
+        color: #666;
+        line-height: 1.6;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Your Account Page</h1>
+      <p>Congratulations! You have sucessfully done SQL Injection!</p>
+      <div class="d-flex align-items-center justify-content-center">
+        <%= link_to "Edit Password", edit_password_path %>
+      </div>
+    </div>
+  </body>
+  </html>
