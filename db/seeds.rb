@@ -10,6 +10,5 @@
 
 user1 = User.create!(
   email:    'admin@email.com',
-  password: 'authenticate_user!',
   password: 'password'
 )

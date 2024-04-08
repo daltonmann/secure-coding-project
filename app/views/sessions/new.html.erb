@@ -1,19 +1,75 @@
-<h1>Log in</h1>
 
-<%= form_with model: @user, url: session_path do |form| %>
-  <div>
-    <%= form.label :email %>
-    <%= form.text_field :email, class: "form-control", placeholder: "example@email.com" %>
+<html>
+<head>
+  <title>Log In</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    form {
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Log In</h1>
+
+    <%= form_with model: @user, url: session_path do |form| %>
+      <div>
+        <%= form.label :email %>
+        <%= form.text_field :email, class: "form-control", placeholder: "example@email.com" %>
+      </div>
+
+      <div>
+        <%= form.label :password %>
+        <%= form.text_field :password, class: "form-control", placeholder: "password" %>
+      </div>
+
+      <div>
+        <%= form.submit "Log in", class: "btn btn-primary"%>
+      </div>
+    <% end %>
+
+    <%= link_to "Forgot your password?", new_password_reset_path %>
   </div>
-
-  <div>
-    <%= form.label :password %>
-    <%= form.text_field :password, class: "form-control", placeholder: "password" %>
-  </div>
-
-  <div>
-    <%= form.submit "Log in", class: "btn btn-primary"%>
-  </div>
-<% end %>
-
-<%= link_to "Forgot your password?", new_password_reset_path %>
+</body>
+</html>
